@@ -2,10 +2,16 @@
 <head>
   <title>Immigrants and employment in the United States</title>
 
+<script src=”common/js/jquery.js” type=”text/javascript”></script>
+<script src=”common/js/tips.js” type=”text/javascript”></script>
+
+
 </head>
 
 
 <meta charset="utf-8">
+
+
 <style>
 
 body{
@@ -54,8 +60,14 @@ body{
 }
 
 h1{
-  margin: 50px 50px 0;
+  margin: 10px 10px 0;
   font-size: 50px;
+}
+
+h5 {
+  font-family: summer font;
+  font-size: 20px ;
+
 }
 
 #title {
@@ -65,18 +77,13 @@ h1{
 #subtitle {
   color: #565656;
   text-align: center;
-  font-size: 25px;
+  font-size: 27px;
 }
 
 
-#month {
-  margin-right: auto
 
 
-}
-
-
-h1, h3{
+h1, h2, h3, h5{
   text-align: center;
 }
 
@@ -90,36 +97,64 @@ h1, h3{
   font-family: monospace;
 }
 
-
-svg{
-  background-color: #eee;
-  margin-top: 20px;
+#sample1img { 
+    float: right;
 }
+
+
+
+</style>
+
 
 </style>
 <body>
 
 
 
+
+
+
 <script type="text/javascript">
 function sample1enlarge() {
  var $elementReference = document.getElementById( "sample1img" );
- $elementReference.style.height = "80px";
- $elementReference.style.width = "80px";
+ $elementReference.style.height = "100px";
+ $elementReference.style.width = "100px";
 }
 function sample1reduce() {
  var $elementReference = document.getElementById( "sample1img" );
- $elementReference.style.height = "40px";
- $elementReference.style.width = "40px";
+ $elementReference.style.height = "70px";
+ $elementReference.style.width = "70px";
 }
 </script>
 
-<img id="sample1img" onmouseover="sample1enlarge();" onmouseout="sample1reduce();" img src="african immigrant.png" />
+<img id="sample1img" onmouseover="sample1enlarge();" onmouseout="sample1reduce();" img src="immigrant lady.jpg"/;> 
+
+<style type="text/css">
+  
+
+#help_tips_pop {
+
+display:inline-block;
+position:absolute;
+margin-top:15px;
+margin-left:5px;
+background:rgba(0,0,0,0.5);
+color:#FFF;
+margin-top:15px;
+text-align:center;
+border-radius:3px;
+padding:5px;
+}
+
+</style>
+
+
+
 
 
 <style type="text/css"></style>
 
-<h2>Mayu Inoue's first stab for Data visualization with javascript!</h2>
+<h5>Mayu Inoue's first stab for Data visualization with JavaScript!</h5>
 
 <h1 id="title">Immigrants and employment in the United States</h1>
 <h2 id="subtitle">Unemployment rate and population growth</h2>
@@ -127,33 +162,30 @@ function sample1reduce() {
   <div id='sections'>
 
 
-
-
-
     <div>
       <h3>Working population projection</h3>
       <p>Immigration has long supported the growth and dynamism of the U.S. economy. Immigrants and refugees are entrepreneurs, job creators, taxpayers, and consumers. They add trillions of dollars to the U.S. gross domestic product, or GDP, and their economic importance will only increase in the coming decades as America’s largest generation—the baby boomers—retires en masse, spurring labor demand and placing an unprecedented burden on the social safety net. Still, additional benefits to the U.S. economy and society more broadly could be obtained through legislative reforms designed to modernize the U.S. immigration system and provide unauthorized immigrants in the country today with a path to citizenship.</p>
 
 
-
       <p>For most of the past half-century, adults in the U.S. Baby Boom generation – those born after World War II and before 1965 – have been the main driver of the nation’s expanding workforce. But as this large generation heads into retirement, the increase in the potential labor force will slow markedly, and immigrants will play the primary role in the future growth of the working-age population (though they will remain a minority of it).
 
-      <p>The number of adults in the prime working ages of 25 to 64 – 173.2 million in 2015 – will rise to 183.2 million in 2035, according to Pew Research Center projections. That total growth of 10 million over two decades will be lower than the total in any single decade since the Baby Boomers began pouring into the workforce in the 1960s. The growth rate of working-age adults will also be markedly reduced. (you can see the visual on the right side)</p>
+      <p>The number of adults in the prime working ages of 25 to 64 – 173.2 million in 2015 – will rise to 183.2 million in 2035, according to Pew Research Center projections. That total growth of 10 million over two decades will be lower than the total in any single decade since the Baby Boomers began pouring into the workforce in the 1960s. The growth rate of working-age adults will also be markedly reduced.</p>
 
+
+<div>
 
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   
  <canvas id="month"></canvas>
+<div class="container1"; id="container1">
 
 <script>
 var ctx1 = document.getElementById('month').getContext('2d');
 var tweetchart = new Chart(ctx1, {
-    // The type of chart we want to create
+    
     type: 'line',
-
-    // The data for our dataset
     data: {
 
         labels: ["1965", "1975", "1985", "1995", "2005","2015", "2035"],
@@ -181,10 +213,10 @@ var tweetchart = new Chart(ctx1, {
 
 });
 
-
 </script>
+</div>
 
-
+</div>
 
 
 
@@ -340,7 +372,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)'
 
             ],
-            borderWidth: 0.5
+            borderWidth: 0.9
         }]
     },
     options: {
@@ -364,11 +396,12 @@ var myChart = new Chart(ctx, {
 
     <div>
       <h3>Analysis from these visual graph data</h3>
-      <p>By overlapping these data, we can see unless having the immigrants population in the United States, the United States will not have enough working population after 2015. The projection shows that by the 2035, which is just less than 20 years ahead, the US will see the 7 million working population will be decreased. </p>
+      <p>The firt data above showed that the working population in the United States will start decreasing after 2015. The projection also shows that by the 2035, which is just less than 20 years ahead, the US will see the decrease of 7 million working population, which is usually the driving force of the economiy. </p>
+
+      <p>The evolution of the unemployment rate also shows one interesting aspect. From 2009, the number of the immigrants population got stable at the high level. After this period, the unemployment rate incrementally got decreased.</p> 
 
 
-      <p>The evolution of the unemployment rate also shows one aspect to explain this issue. From 2009, the number of the population got stable at the high level. After this period, the unemployment rate incrementally got decreased.
-      The more the immigrant population grow, the more the unemployment rate gets lower. Actually, I thought the opposite but this assignment proved me that the population growth brought one of the important aspect to the United States economy.</p>
+      <p>With the immigrant population growth, the unemployment rate got lower. Actually, I thought the opposite before starting this data visualization but this assignment proved me that the immigrant population growth brought one of the economic solution to the United States economy. </p>
 
   
 
